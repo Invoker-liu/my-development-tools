@@ -1,4 +1,3 @@
-<a name="top"></a>
 # Shell Script Development
 
 主要面向 Bash。
@@ -11,10 +10,10 @@
 
 - [其他](#其他)
 - [测试](#测试)
-- [TUI](#tui)
 - [颜色](#颜色)
 - [参数解析](#参数解析)
 - [工具集](#工具集)
+- [LSP](#lsp)
 - [Lint](#lint)
 - [格式化 Formater](#格式化-formater)
 - [自动补全](#自动补全)
@@ -26,6 +25,8 @@
 ## 其他
 
 - [docopt](http://docopt.org/): 如何写命令的 help 文档
+- [Command Line Interface Guidelines](https://clig.dev/)
+  - [开源项目](https://github.com/cli-guidelines/cli-guidelines)
 
 ## 测试
 
@@ -37,12 +38,6 @@
 - [zunit](https://github.com/zunit-zsh/zunit): 现代化的 Zsh 测试框架
 - [shellspec](https://github.com/shellspec/shellspec): A full-featured BDD unit testing framework for bash, ksh, zsh, dash and all POSIX shells
 - [shunit2](https://github.com/kward/shunit2): unit test framework
-
-## TUI
-
-- [gum](https://github.com/charmbracelet/gum): 超酷的工具
-- [fzf](https://github.com/junegunn/fzf): 模糊筛选/搜索任意列表
-- [bat](https://github.com/sharkdp/bat): better cat。自动代码着色，自带分页器，显示代码行，支持 diff，自动标记 git 变动，可显示不可见符号。
 
 ## 颜色
 
@@ -62,13 +57,17 @@
 - [readlinkf](https://github.com/ko1nksm/readlinkf): 跨平台、POSIX 兼容的 `readlink -f`
   - [bashup/realpaths](https://github.com/bashup/realpaths): 备选方案
 
+## LSP
+
+- [bash-language-server](https://github.com/bash-lsp/bash-language-server): LSP server。如果安装了 shfmt，会自动用它来格式化代码。
+
 ## Lint
 
 - [shellcheck](https://github.com/koalaman/shellcheck): linux shell script lint
 
 ## 格式化 Formater
 
-- [mvdan/sh](https://github.com/mvdan/sh)
+- [shfmt](https://github.com/mvdan/sh)
 
 ## 自动补全
 
@@ -85,5 +84,3 @@ https://github.com/scop/bash-completion
 ## 文件定位
 
 - [lookup.sh](https://github.com/adoyle-h/lookup.sh): Look up project directory based on a locator file. Never write ../../ relative path format.
-
-**[⬆ 返回顶部](#top)**

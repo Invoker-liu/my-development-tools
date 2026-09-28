@@ -1,4 +1,3 @@
-<a name="top"></a>
 # Golang 开发工具栈
 
 [⬅︎ 返回上层](../#go)
@@ -8,6 +7,7 @@
 <!-- MarkdownTOC GFM -->
 
 - [其他](#其他)
+- [配置](#配置)
 - [开发必备](#开发必备)
 - [DAP](#dap)
 - [Code Generator](#code-generator)
@@ -15,26 +15,35 @@
 - [Linter](#linter)
 - [Cheatsheet](#cheatsheet)
 - [Logger](#logger)
+- [模板引擎](#模板引擎)
 - [错误处理](#错误处理)
 - [结构化数据处理](#结构化数据处理)
     - [JSON](#json)
 - [CLI](#cli)
 - [测试](#测试)
+- [Profiling](#profiling)
 - [HTTP](#http)
 - [容器](#容器)
-- [终端](#终端)
+- [终端 Shell](#终端-shell)
 
 <!-- /MarkdownTOC -->
 
 ## 其他
 
 - https://awesome-go.com/
-- [sprig](https://github.com/Masterminds/sprig): Useful template functions for Go templates
 - [gore](https://github.com/motemen/gore): Go REPL
   - [gomacro](https://github.com/cosmos72/gomacro): 备用方案
-- https://tmc.github.io/json-to-struct/ : JSON 转 Go Struct
 - [gvm](https://github.com/moovweb/gvm): Go 版本管理器
   - [update-golang](https://github.com/udhos/update-golang): a script to easily fetch and install new Golang releases with minimum system intrusion
+- [project-layout](https://github.com/golang-standards/project-layout): go 项目结构模板
+- [statik](https://github.com/rakyll/statik): Embed files into a Go executable
+- [markers](https://pkg.go.dev/sigs.k8s.io/controller-tools/pkg/markers): kubebuilder 里的 marker 注释语法解析工具。
+- [gods](https://github.com/emirpasic/gods): Go 基本数据结构
+- [TheAlgorithms/Go](https://github.com/TheAlgorithms/Go): Algorithms and Data Structures implemented in Go
+
+## 配置
+
+- [viper](https://github.com/spf13/viper): 支持环境变量，配置文件 (JSON, TOML, YAML, HCL, envfile, Java properties config files)，命令行参数。
 
 ## 开发必备
 
@@ -53,7 +62,7 @@
 ## Formater
 
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports): `go get golang.org/x/tools/cmd/goimports`. 自动化加入 import，或去除 import 里未使用的包。同时也会自动格式化代码，类似 gofmt。
-- [gofmt](https://golang.org/cmd/gofmt/): 格式化代码用
+- [gofmt](https://pkg.go.dev/cmd/gofmt): 格式化代码用
 
 ## Linter
 
@@ -69,7 +78,12 @@
 ## Logger
 
 - [zap](https://github.com/uber-go/zap)
-- [logrus](https://github.com/sirupsen/logrus)
+- [zerolog](https://github.com/rs/zerolog)
+
+## 模板引擎
+
+- [sprig](https://github.com/Masterminds/sprig): Useful template functions for Go templates
+- [gomplate](https://github.com/hairyhenderson/gomplate): 虽然不支持 sprig，但提供了等价的丰富的函数库
 
 ## 错误处理
 
@@ -87,21 +101,28 @@
 
 ## 测试
 
-- [goconvey](https://github.com/smartystreets/goconvey)
-- [testify](https://github.com/stretchr/testify)
+- [goconvey](https://github.com/smartystreets/goconvey): Go testing in the browser. Integrates with `go test`
+- [testify](https://github.com/stretchr/testify): 提供 assert, require, mock, suit 工具函数
 - [gomock](https://github.com/golang/mock/)
+- [monkey](https://github.com/go-kiss/monkey): Monkey patch。目前只支持 amd64 架构。
+  - [原理](https://bou.ke/blog/monkey-patching-in-go/)
+- [testaroli](https://github.com/qrdl/testaroli): Monkey patch。支持 amd64 和 arm64 架构。
+
+## Profiling
+
+- [pprof](https://github.com/google/pprof)
 
 ## HTTP
 
 - [mux](https://github.com/gorilla/mux): a request router and dispatcher
+- [gin](https://github.com/gin-gonic/gin): http web 框架
 
 ## 容器
 
 - [automaxprocs](https://github.com/uber-go/automaxprocs): 在容器中正确设置 GOMAXPROCS
 
-## 终端
+## 终端 Shell
 
 - [tview](https://github.com/rivo/tview)
 - [tcell](https://github.com/gdamore/tcell)
-
-**[⬆ 返回顶部](#top)**
+- [posener/complete](https://github.com/posener/complete/tree/master): 构建补全命令的库，支持 bash, zsh, fish

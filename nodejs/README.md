@@ -1,4 +1,3 @@
-<a name="top"></a>
 # NodeJS 开发工具栈
 
 [⬅︎ 返回上层](../#nodejs)
@@ -65,14 +64,14 @@
 - [RPC](#rpc)
 - [其他](#其他)
 - [我关注的人/组](#我关注的人组)
-- [待评价](#待评价)
 
 <!-- /MarkdownTOC -->
 
 ## Node 环境
 
 - [nrm](https://github.com/Pana/nrm): NPM Registry Manager
-- [nvm](https://github.com/creationix/nvm): Node Version Manager
+- [fnm](https://github.com/Schniz/fnm): Node Version Manager
+  - [nvm](https://github.com/creationix/nvm): 备用方案
   - [n](https://github.com/tj/n): 备用方案
 - [nvs](https://github.com/jasongin/nvs): 类似 nvm。Windows 平台使用这个。
 - [get-node](https://github.com/ehmicky/get-node): 这是一个类库。功能是下载指定版本的 node。兼容 Linux/Mac/Windows，支持代理
@@ -145,21 +144,21 @@
 - [nesh](https://github.com/danielgtaylor/nesh): 增强型交互式 shell 框架
 - [vorpal](https://github.com/dthree/vorpal): 交互式命令行框架
 - [vantage](https://github.com/dthree/vantage): 实时交互式 CLI 工具，基于 vorpal 开发
-- [runkit](https://runkit.com/home): 非常酷！在前端直接引用 npm 包编写代码
+- ~~[runkit](https://runkit.com/home)~~: 「已倒闭」非常酷！在前端直接引用 npm 包编写代码
 - [ink](https://github.com/vadimdemedes/ink): 用 React 写法构建交互式 CLI
   - [ink-tab](https://github.com/jdeniau/ink-tab)
 
 ### CLI 参数解析
 
 - ~~[yargs](https://github.com/yargs/yargs)~~: 「超难用，不好扩展」命令行参数解析器（复杂版）。支持子命令，多语言，帮助文档等功能
-- [minimist](https://github.com/substack/minimist): 命令行参数解析器（极简）
+- [minimist](https://github.com/minimistjs/minimist): 命令行参数解析器（极简）
 - [Inquirer](https://github.com/SBoudrias/Inquirer.js): 命令行交互提示
   - [Enquirer](https://github.com/enquirer/enquirer): 类似 Inquirer，UI 交互更丰富
   - [qoa](https://github.com/klaussinani/qoa): 备选方案
 - [Caporal.js](https://github.com/mattallty/Caporal.js): 支持自动补全，自动构建帮助，语法友好的 CLI 框架。上手简单好用。
 - [oclif](https://github.com/oclif/oclif): Heroku 出品。比 Caporal.js 支持更多功能。特点是 OOP，Hook，插件体系。概念较多，比较臃肿。
-  - [12 Factor CLI App](https://medium.com/@jdxcode/12-factor-cli-apps-dd3c227a0e46)
-  - [an adaptive, intent based CLI "state machine"](https://gist.github.com/sw-yx/3af1e264b8460af8897768045b2c229f)
+  - [12 Factor CLI App](https://web.archive.org/web/20260830030345/https://jdxcode.medium.com/12-factor-cli-apps-dd3c227a0e46)
+  - [an adaptive, intent based CLI "state machine"](https://web.archive.org/web/20230131202556/https://gist.github.com/sw-yx/3af1e264b8460af8897768045b2c229f)
 - [string-to-argv](https://github.com/vladimir-tikhonov/string-to-argv): 把一个命令字符串分解成数组。对于分离字符串里的命令路径和参数很有用。
   - [split-cmd](https://github.com/thiagodp/split-cmd): 备选方案
 
@@ -184,14 +183,10 @@
 
 ## 打包方案
 
-- [pkg](https://github.com/zeit/pkg): 将 node 脚本编译成可执行二进制文件，脱离 node 依赖
-- [enclose](https://github.com/igorklopov/enclose):  pkg 的前身，都是由 igorklopov 开发的，记录以作纪念
-- [nexe](https://github.com/nexe/nexe): 另一套打包成可执行程序的方案
-- [node-packer](https://github.com/pmq20/node-packer): 又一套打包成可执行程序的方案
+将 nodejs 项目打包成一个可执行文件
 
-方案比较
-- https://github.com/zeit/pkg/issues/42
-- https://github.com/pmq20/node-packer#comparing-with-similar-projects
+- https://nodejs.org/api/single-executable-applications.html
+- [nexe](https://github.com/nexe/nexe)
 
 ## 编译
 
@@ -232,6 +227,7 @@
 - [Joi](https://github.com/hapijs/joi): 人类友好的校验 Schema
 - [yup](https://github.com/jquense/yup): 同 Joi，备用
 - [validator.js](https://github.com/validatorjs/validator.js)
+- [zod](https://github.com/colinhacks/zod): TypeScript-first schema declaration and validation library.
 
 ## 脚手架
 
@@ -268,7 +264,7 @@
 
 ## 数据生成/Mock
 
-- [faker.js](https://github.com/Marak/faker.js): 制造假数据
+- [faker.js](https://github.com/faker-js/faker): 制造假数据
 - [casual](https://github.com/boo1ean/casual): 制造假数据。备选
 - [Chance](https://github.com/chancejs/chancejs): 制造假数据。备选2
 - [nuysoft/Mock](https://github.com/nuysoft/Mock): 制造假数据。备选3
@@ -393,6 +389,7 @@
 
 ## Code Lint
 
+- [Biome](https://github.com/biomejs/biome): The formatter and linter for JavaScript, TypeScript, JSX, JSON, CSS and GraphQL. Usable via CLI and LSP.
 - [eslint](https://github.com/eslint/eslint): 规则式代码校验器
   - [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
   - [eslint-import-resolver-alias](https://github.com/johvin/eslint-import-resolver-alias)
@@ -402,8 +399,7 @@
 
 ## Code Format
 
-- [prettier](https://github.com/prettier/prettier): monorepo 使用有个[问题](https://github.com/prettier/prettier/issues/4081)
-  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+- [Biome](https://github.com/biomejs/biome): The formatter and linter for JavaScript, TypeScript, JSX, JSON, CSS and GraphQL. Usable via CLI and LSP.
 
 ## Code Check
 
@@ -518,14 +514,6 @@
 
 - https://github.com/sindresorhus?utf8=%E2%9C%93&tab=repositories&q=&type=source
 - https://github.com/DJCordhose?utf8=%E2%9C%93&tab=repositories&q=&type=source
-- https://github.com/substack?utf8=%E2%9C%93&tab=repositories&q=&type=source
 - https://github.com/isaacs?utf8=%E2%9C%93&tab=repositories&q=&type=source
 
 - https://github.com/node-modules
-
-----
-
-## 待评价
-
-
-**[⬆ 返回顶部](#top)**

@@ -1,15 +1,23 @@
-<a name="top"></a>
 # Lua 工具栈
 
 [⬅︎ 返回上层](../#lua)
+
+## TOC
+
+<!-- MarkdownTOC GFM -->
+
+- [其他](#其他)
+- [编译](#编译)
+- [测试](#测试)
+- [文档](#文档)
+
+<!-- /MarkdownTOC -->
 
 ## 其他
 
 - [luarocks](https://github.com/luarocks/luarocks): 包管理器
 - [inspect](https://github.com/kikito/inspect.lua): 查看变量结构
-- [sumneko lsp](https://github.com/sumneko/lua-language-server): Lua LSP Server
-  - [Alloyed/lua-lsp](https://github.com/Alloyed/lua-lsp): 备选方案
-- [LuaFormatter](https://github.com/Koihik/LuaFormatter): sumneko lsp 也有 Format 功能，但这个的 Format 规则更多。虽然不是很理想。
+- [lua-language-server](https://github.com/LuaLS/lua-language-server): LSP Server。它使用 [EmmyLuaCodeStyle](https://github.com/CppCXY/EmmyLuaCodeStyle) 格式化代码
 - [luacheck](https://github.com/mpeterv/luacheck): Lua Code Linter
 - [luvit](https://github.com/luvit/luvit): Lua + libUV + jIT
 - [luv](https://github.com/luvit/luv): Bare libuv bindings for lua
@@ -28,6 +36,4 @@
 ## 文档
 
 - [LDoc](https://github.com/lunarmodules/LDoc): [语法](https://stevedonovan.github.io/ldoc/manual/doc.md.html)
-- [SumnekoLSP - Annotations](https://github.com/sumneko/lua-language-server/wiki/Annotations)
-
-**[⬆ 返回顶部](#top)**
+- [LuaLS - Annotations](https://github.com/LuaLS/lua-language-server/wiki/Annotations)

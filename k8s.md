@@ -1,4 +1,3 @@
-<a name="top"></a>
 # Kubernetes 工具栈
 
 [⬅︎ 返回上层](../#k8skubernetes)
@@ -8,6 +7,8 @@
 <!-- MarkdownTOC GFM -->
 
 - [其他](#其他)
+- [K8S YAML](#k8s-yaml)
+- [Dashboard](#dashboard)
 - [镜像与代理](#镜像与代理)
 - [kubectl](#kubectl)
 - [环境](#环境)
@@ -35,15 +36,29 @@
 - [k9s](https://github.com/derailed/k9s): 交互式 CLI 工具，用于管理 K8S 集群。
 - [KubeEdge](https://github.com/kubeedge/kubeedge): 用于边缘计算场景
 - [gVisor](https://github.com/google/gvisor): 容器运行时沙盒。把容器跑在隔离的虚拟容器环境中，提高安全性。
-- [Kubernetes YAML Generator](https://k8syaml.com/)
 - [ksync](https://github.com/ksync/ksync): 同步 POD 里的文件
+
+## K8S YAML
+
+- [kube-linter](https://github.com/stackrox/kube-linter): a static analysis tool that checks Kubernetes YAML files and Helm charts
+- [Kubernetes YAML Generator](https://k8syaml.com/)
+- `kubectl create $kind $name --dry-run=client -oyaml` 通过命令行创建 YAML 文件。去掉 `--dry-run` 会直接创建资源。
+  - `kubectl create --help`, `kubectl create deploy --help`
+
+## Dashboard
+
+- [kuboard](https://github.com/eip-work/kuboard-press): K8S 的管理界面。全中文。
 
 ## 镜像与代理
 
-- http://mirror.azure.cn/help/gcr-proxy-cache.html : GCR 代理
+- [DaoCloud 的镜像](https://github.com/DaoCloud/public-image-mirror#%E6%94%AF%E6%8C%81%E5%89%8D%E7%BC%80%E6%9B%BF%E6%8D%A2%E7%9A%84-registry-%E4%B8%8D%E6%8E%A8%E8%8D%90)
 - https://mirror.azure.cn/kubernetes/ : containernetworking-plugins, etcd, kubectl, containerd 等资源的镜像
-- quay.io，使用 `quay.azk8s.cn` 替代。
 - https://kubernetes-charts.proxy.ustclug.org : helm chart 仓库镜像，http、https 都支持
+- https://docker.aityp.com/
+  - 不支持 containerd 的 registry 配置，只能用命令行直接 pull 镜像。因为这个镜像平台的镜像 path 前缀设计有问题，会导致匿名 auth 失败。
+  - 同步镜像源: gcr.io ghcr.io quay.io k8s.gcr.io docker.io registry.k8s.io docker.elastic.co skywalking.docker.scarf.sh mcr.microsoft.com docker.n8n.io
+  - 单个镜像大小限制 2G (超过 2G 闲时任务同步 凌晨 00-07 时)(超过 12G 镜像禁止同步)
+  - 镜像同步不及时，需要手动添加镜像，等待 1 小时后才生效
 
 ## kubectl
 
@@ -97,6 +112,7 @@
 
 - [kubebuilder](https://github.com/kubernetes-sigs/kubebuilder): SDK for building Kubernetes APIs using CRDs
 - [operator-sdk](https://github.com/operator-framework/operator-sdk)
+- [shell-operator](https://github.com/flant/shell-operator): 用 shell 脚本写 operator
 
 ## Add-On
 
@@ -113,13 +129,12 @@
 ## Debug
 
 - [netshoot](https://github.com/nicolaka/netshoot): a Docker + Kubernetes network trouble-shooting swiss-army container
-- [kubectl-debug](https://github.com/aylei/kubectl-debug): 可以非侵入式地排查 pod 和容器的网络问题。默认使用 netshoot 镜像。相关议题 [Ephemeral Containers](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/20190212-ephemeral-containers.md#motivation)
+- [kubectl-debug](https://github.com/JamesTGrant/kubectl-debug): 可以非侵入式地排查 pod 和容器的网络问题。默认使用 netshoot 镜像。相关议题 [Ephemeral Containers](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/20190212-ephemeral-containers.md#motivation)
 - [ksniff](https://github.com/eldadru/ksniff): Kubectl plugin to ease sniffing on kubernetes pods using tcpdump and wireshark
+- [telepresence](https://github.com/telepresenceio/telepresence): 将远端 k8s 集群的流量转发到本地的服务，便于调试。
 
 ## Load Balancer
 
 - [MetalLB](https://github.com/metallb/metallb): a load-balancer implementation for bare metal Kubernetes clusters
 
 ## [Serverless](./README.md#serverless)
-
-**[⬆ 返回顶部](#top)**
